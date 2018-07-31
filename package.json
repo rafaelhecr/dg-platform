@@ -1,0 +1,19 @@
+{
+  "name": "comparador_reportes_cummins",
+  "version": "0.0.1",
+  "description": "Permite comparar reportes generados por los programas de cummins en formato XLS y CVS, con las plantillas y arrojar las diferencias",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Herrera (rherrerac@daduga.com.mx)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "convert-excel-to-json": "^1.4.0",
+    "download-file": "^0.1.5",
+    "express": "^4.16.3",
+    "npm": "^6.1.0"
+  }
+}
