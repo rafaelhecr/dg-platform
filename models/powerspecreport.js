@@ -1,9 +1,7 @@
 const express = require('express');
-const app = express();
 const download = require('download-file');
 const excelToJson = require('convert-excel-to-json');
 const fs = require('fs');
-var acumText;
 
 module.exports.compPSReport = (url) => {
     let urlParse = url;
@@ -45,18 +43,25 @@ module.exports.compPSReport = (url) => {
             sourceFile: './temp/descargado.xls'
         });
         
-    
+        let datos = [];
+        let objeto = {};
         
         for (let i=0; i<file1['Sheet1'].length; i++){
             let textoLimpio1 = JSON.stringify(file1['Sheet1'][i]);
             let textoLimpio2 = JSON.stringify(file2['Sheet1'][i]);
             if (textoLimpio1 != textoLimpio2){
-                acumText += (i+1) + " " + textoLimpio1 + "\n" + (i+1) + " " + textoLimpio2 + "\n\n";
-                console.log ((i+1) + " " + textoLimpio1 + "\n" + (i+1) + " " + textoLimpio2 + "\n\n");
-
+                // console.log ((i+1) + " " + textoLimpio1 + "\n" + (i+1) + " " + textoLimpio2 + "\n\n");
+                datos.push({
+                    "Plantilla": file1['Sheet1'][i],
+                    "Subido": file2['Sheet1'][i]
+                });
             }
             
         }
+        objeto.datos = datos;
+        // console.log(JSON.stringify(objeto));
+        return objeto;
+
     }
 
     
@@ -76,7 +81,10 @@ module.exports.compPSReport = (url) => {
     }
     setTimeout(download1, 50);
     setTimeout(download2, 100);
-    setTimeout(readFilesContent, 3000);
-    setTimeout(erase1, 7000);
-    setTimeout(erase2, 7000);
+    setTimeout(readFilesContent, 6000);
+    setTimeout(erase1, 10000);
+    setTimeout(erase2, 1000);
+
+    let obj = readFilesContent();
+    return obj;
 };
