@@ -30,8 +30,15 @@ router.get("/creportes/result", function(req,res){
 router.post("/creportes/result", function(req,res){
     /*Ruta tipo post para recibir como parametro por AJAX el link de cloudinary*/    
     console.log(req.body[0]["secure_url"]);
-    let resultados = compara_psexcel.compPSReport(req.body[0]["secure_url"]);
-    console.log(resultados);
+    compara_psexcel.compPSReport(req.body[0]["secure_url"]).then((resultado) => {    
+        // compara_psexcel.compPSReport(req.body[0]["secure_url"]).then((resultado) => {
+        console.log(JSON.stringify(resultado));
+        res.json(resultado);
+    }, (error) => {
+        console.log(error);
+    })
+    // let result = compara_psexcel(req.body[0]["secure_url"]);
+    // let resultados = compara_psexcel.compPSReport(req.body[0]["secure_url"]);
 })
 
 module.exports = router;
