@@ -4,7 +4,13 @@
   "description": "Permite comparar reportes generados por los programas de cummins en formato XLS y CVS, con las plantillas y arrojar las diferencias",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "repo-tools lint",
+    "pretest": "npm run lint",
+    "system-test": "repo-tools test app",
+    "test": "npm run system-test",
+    "e2e-test": "repo-tools test deploy"
   },
   "author": "Rafael Herrera (rherrerac@daduga.com.mx)",
   "license": "ISC",

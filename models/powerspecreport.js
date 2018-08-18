@@ -16,7 +16,7 @@ let compPSReport = (url) => {
                 sourceFile: './temp/descargado.xls'
             });
             
-            let datos = [];
+            let datos = []; 
             let objeto = {};
             
             for (let i=0; i<file1['Sheet1'].length; i++){

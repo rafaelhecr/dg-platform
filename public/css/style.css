@@ -4,3 +4,137 @@
     justify-content: center;
     align-items: center;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: lighter;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: url("https://res.cloudinary.com/smith07/image/upload/v1534520774/bg-truck.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.content {
+    width: 94%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.logo{
+    float: left;
+    position: relative;
+    margin: 10px 15px 15px 10px;
+}
+
+.logo img{
+    border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 10px 24px 48px 5px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 24px 48px 5px rgba(0,0,0,1);
+    box-shadow: 10px 24px 48px 5px rgba(0,0,0,1);
+    
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+@media(max-width: 786px) {
+
+    .logo {
+          position: fixed;
+          top: 0;
+          margin-top: 16px;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: #000;
+    }
+
+    nav.black ul {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          text-align: center;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+
+}
+
+.caption{
+    position: absolute;
+    top: 50%;
+    margin-top: -100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+    font-size: 18px;
+    font-weight: 300px;
+    color: #fff;
+    text-shadow: 7px 5px 9px #000000;
+}

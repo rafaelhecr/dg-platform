@@ -17,4 +17,9 @@ app.get("/",function(req, res){
 });
 
 app.use("/platform", router_app);
-app.listen(80);
+
+//Inicializador del server
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`La aplicación esta a la escucha en ${PORT}`);
+})
