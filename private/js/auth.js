@@ -1,11 +1,12 @@
 // Initialize Firebase
+//Esta configuración es para conectarme al servicio de Firebase, he eliminado el contenido de estos campos
 var config = {
-    apiKey: "AIzaSyAihFUK8QygoI-3GGpHWFdSaIJtJS-nqG8",
-    authDomain: "dazzling-bruin-180814.firebaseapp.com",
-    databaseURL: "https://dazzling-bruin-180814.firebaseio.com",
-    projectId: "dazzling-bruin-180814",
-    storageBucket: "dazzling-bruin-180814.appspot.com",
-    messagingSenderId: "594017903645"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 firebase.initializeApp(config);
 

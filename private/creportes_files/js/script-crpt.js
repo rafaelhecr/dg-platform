@@ -2,7 +2,7 @@ $(function(){
     var uploadButton = $('#upload-button');
     uploadButton.on('click', function(e){
         cloudinary.openUploadWidget(
-            { cloud_name: 'smith07', upload_preset: 'zmhzjmag',
+            { cloud_name: '', upload_preset: '',
             sources: ['local'], theme: 'white',
             client_allowed_formats: ["xls","csv"], resourse_type: 'raw'},
             function(error, result) {
@@ -36,4 +36,4 @@ $(function(){
 $(document).on('cloudinarywidgetclosed', function(e, data){
     console.log("El widget se cerro", data);
 });
-// intentando leer la respuesta
+
